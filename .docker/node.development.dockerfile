@@ -8,7 +8,7 @@ WORKDIR   $CONTAINER_PATH
 
 RUN npm install nodemon -g
 
-EXPOSE 3000
+EXPOSE 80
 
 ENTRYPOINT ["nodemon", "server.js"]
 
@@ -19,7 +19,7 @@ ENTRYPOINT ["nodemon", "server.js"]
 # Start MongoDB and Node (link Node to MongoDB container with legacy linking)
  
 # docker run -d --name mongodb mongo
-# docker run -d -p 3000:3000 --link mongodb --name nodeapp danwahlin/node
+# docker run -d -p 80:3000 --link mongodb --name nodeapp danwahlin/node
 
 # Option 2: Create a custom bridge network and add containers into it
 
